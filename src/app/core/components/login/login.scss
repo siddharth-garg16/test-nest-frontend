@@ -1,0 +1,22 @@
+.login-form-wrapper {
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+.login-form {
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  .login-form {
+    width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .login-form {
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+  }
+}
