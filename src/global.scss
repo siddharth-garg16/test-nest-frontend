@@ -77,6 +77,16 @@ $spacing-values: 5, 10, 15, 20, 25, 30;
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
 .justify-start {
   justify-content: flex-start;
 }

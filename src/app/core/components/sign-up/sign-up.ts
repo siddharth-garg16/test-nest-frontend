@@ -5,6 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -17,6 +18,7 @@ import { RouterLink } from '@angular/router';
     MatIconModule,
     MatDividerModule,
     RouterLink,
+    MatRadioModule,
   ],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.scss',
