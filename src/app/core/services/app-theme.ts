@@ -7,6 +7,7 @@ import { Theme } from '../enums/theme.enum';
 export class AppTheme {
   // Reactive signal for theme
   readonly isDarkMode = signal<boolean>(false);
+  // provides encapsulation on direct hard coded localstorage access
   private readonly THEME_STORAGE_KEY = 'theme';
 
   constructor() {

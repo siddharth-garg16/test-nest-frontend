@@ -1,14 +1,15 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-sign-up',
   imports: [
     MatCardModule,
     MatButtonModule,
@@ -17,9 +18,9 @@ import { RouterLink } from '@angular/router';
     MatIconModule,
     MatDividerModule,
     RouterLink,
+    MatRadioModule,
   ],
-  templateUrl: './login.html',
-  styleUrl: './login.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './sign-up.html',
+  styleUrl: './sign-up.scss',
 })
-export class Login {}
+export class SignUp {}

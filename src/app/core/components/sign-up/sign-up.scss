@@ -1,22 +1,29 @@
-.login-form-wrapper {
+.signup-form-wrapper {
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
-.login-form {
+.signup-form {
   width: 30%;
+}
+.multi-control-row {
+  gap: 1rem;
+}
+
+.example-radio-button {
+  margin: 5px;
 }
 
 @media (max-width: 1024px) {
-  .login-form {
+  .signup-form {
     width: 60%;
   }
 }
 @media (max-width: 768px) {
-  .login-form {
+  .signup-form {
     width: 80%;
   }
 }
 @media (max-width: 480px) {
-  .login-form {
+  .signup-form {
     width: 90%;
   }
 }

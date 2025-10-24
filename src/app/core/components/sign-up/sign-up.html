@@ -1,0 +1,56 @@
+<div class="signup-form-wrapper h-100 w-100 d-flex justify-center align-center">
+  <form class="signup-form">
+    <mat-card appearance="raised">
+      <mat-card-content>
+        <div class="text-center">
+          <h2>Test Nest</h2>
+        </div>
+
+        <div>
+          <div class="d-flex flex-no-wrap multi-control-row">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" />
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" />
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" />
+            <mat-icon matSuffix>password_2</mat-icon>
+          </mat-form-field>
+
+          <mat-label id="account-type-radio-group-label">Account type:</mat-label>
+          <mat-radio-group aria-labelledby="account-type-radio-group-label">
+            <mat-radio-button class="m-15" [value]="1">Teacher</mat-radio-button>
+            <mat-radio-button class="m-15" [value]="2">Student</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="text-center mt-10">
+          <button matButton="filled" class="w-100">Signup</button>
+        </div>
+
+        <mat-divider class="mt-15 mb-10"></mat-divider>
+
+        <div class="text-center">
+          <small>
+            Have an account?
+            <a class="t-link ml-5" [routerLink]="['/login']" href="#">Login</a>
+          </small>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
