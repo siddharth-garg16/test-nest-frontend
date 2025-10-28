@@ -132,14 +132,24 @@ $spacing-values: 5, 10, 15, 20, 25, 30;
   text-align: right !important;
 }
 
-.text-normal {
+.t-normal {
   font-weight: 400 !important;
 }
-.text-semi-bold {
+.t-semi-bold {
   font-weight: 600 !important;
 }
-.text-bold {
+.t-bold {
   font-weight: 700 !important;
+}
+
+.t-underline {
+  text-decoration: underline;
+}
+.t-none {
+  text-decoration: none;
+}
+.t-dashed {
+  text-decoration: line-through;
 }
 
 .t-link {

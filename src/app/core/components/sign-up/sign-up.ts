@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -22,5 +22,13 @@ import { RouterLink } from '@angular/router';
   ],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SignUp {}
+export class SignUp {
+  hidePassword = signal<boolean>(true);
+
+  togglePasswordVisibility(event: MouseEvent): void {
+    this.hidePassword.set(!this.hidePassword());
+    event.stopPropagation();
+  }
+}

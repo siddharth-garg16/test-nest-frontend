@@ -1,11 +1,23 @@
 .signup-form-wrapper {
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-image: linear-gradient(
+    to top,
+    var(--auth-background-gradient-start),
+    var(--auth-background-gradient-end)
+  );
 }
 .signup-form {
   width: 30%;
 }
 .multi-control-row {
   gap: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.multi-control-row .control {
+  flex: 1 1 0;
+  min-width: 200px;
+  box-sizing: border-box;
 }
 
 .example-radio-button {
