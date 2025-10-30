@@ -1,6 +1,6 @@
-# 🎨 Exam Platform — Frontend (Angular)
+# 🎨 Test Nest Platform — Frontend (Angular)
 
-The **frontend** of the Exam Platform — a web-based system where **teachers** can create and share exams, and **students** can take and submit them online.  
+The **frontend** of the Test Nest Platform — a web-based system where **teachers** can create and share exams, and **students** can take and submit them online.  
 Built with **Angular** and **Angular Material**, it provides a clean, responsive, and user-friendly interface.
 
 ---
