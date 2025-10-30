@@ -7,13 +7,13 @@
         </div>
 
         <div>
-          <div class="d-flex flex-no-wrap multi-control-row">
-            <mat-form-field appearance="outline">
+          <div class="d-flex flex-wrap multi-control-row pt-5">
+            <mat-form-field appearance="outline" class="control">
               <mat-label>First Name</mat-label>
               <input matInput type="text" />
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="control">
               <mat-label>Last Name</mat-label>
               <input matInput type="text" />
             </mat-form-field>
@@ -27,8 +27,15 @@
 
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>Password</mat-label>
-            <input matInput type="password" />
-            <mat-icon matSuffix>password_2</mat-icon>
+            <input matInput [type]="hidePassword() ? 'password' : 'text'" />
+            <button
+              matIconButton
+              matSuffix
+              type="button"
+              (click)="togglePasswordVisibility($event)"
+            >
+              <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
           </mat-form-field>
 
           <mat-label id="account-type-radio-group-label">Account type:</mat-label>
@@ -39,7 +46,7 @@
         </div>
 
         <div class="text-center mt-10">
-          <button matButton="filled" class="w-100">Signup</button>
+          <button type="button" matButton="filled" class="w-100">Signup</button>
         </div>
 
         <mat-divider class="mt-15 mb-10"></mat-divider>
@@ -47,7 +54,7 @@
         <div class="text-center">
           <small>
             Have an account?
-            <a class="t-link ml-5" [routerLink]="['/login']" href="#">Login</a>
+            <a class="t-link ml-5 t-semi-bold t-none" [routerLink]="['/login']" href="#">Login</a>
           </small>
         </div>
       </mat-card-content>

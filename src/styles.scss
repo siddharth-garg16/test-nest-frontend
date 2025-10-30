@@ -21,6 +21,31 @@ $dark-theme: mat.define-theme(
   )
 );
 
+// used to target material's specific component to have denser UI (form field, radio, checkbox)
+$compact-material-mixin-theme: mat.define-theme(
+  (
+    density: (
+      scale: -4,
+    ),
+  )
+);
+
+// compact theme mixin
+@mixin apply-compact-theme($compact-theme) {
+  @include mat.form-field-density($compact-theme);
+  @include mat.radio-density($compact-theme);
+  @include mat.checkbox-density($compact-theme);
+  @include mat.menu-density($compact-theme);
+  @include mat.select-density($compact-theme);
+}
+
+// general light/dark dynamic theme
+@mixin apply-light-dark-theme($light-dark-theme) {
+  @include mat.all-component-themes($light-dark-theme);
+  background-color: mat.get-theme-color($light-dark-theme, surface);
+  color: mat.get-theme-color($light-dark-theme, on-surface);
+}
+
 html,
 body {
   height: 100%;
@@ -32,19 +57,19 @@ body {
 
 // default preference is light theme
 :root {
-  @include mat.all-component-themes($light-theme);
-  background-color: mat.get-theme-color($light-theme, surface);
-  color: mat.get-theme-color($light-theme, on-surface);
+  --auth-background-gradient-start: #466fab;
+  --auth-background-gradient-end: #7890c8;
+
+  @include apply-light-dark-theme($light-theme);
+  @include apply-compact-theme($compact-material-mixin-theme);
 }
 
 .light-theme {
-  @include mat.all-component-themes($light-theme);
-  background-color: mat.get-theme-color($light-theme, surface);
-  color: mat.get-theme-color($light-theme, on-surface);
+  @include apply-light-dark-theme($light-theme);
+  @include apply-compact-theme($compact-material-mixin-theme);
 }
 
 .dark-theme {
-  @include mat.all-component-colors($dark-theme);
-  background-color: mat.get-theme-color($dark-theme, surface);
-  color: mat.get-theme-color($dark-theme, on-surface);
+  @include apply-light-dark-theme($dark-theme);
+  @include apply-compact-theme($compact-material-mixin-theme);
 }
