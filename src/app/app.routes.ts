@@ -11,4 +11,9 @@ export const routes: Routes = [
     path: 'signup',
     loadComponent: () => import('./core/components/sign-up/sign-up').then((c) => c.SignUp),
   },
+  // user profile route
+  {
+    path: 'profile',
+    loadComponent: () => import('./profile/profile').then((c) => c.Profile),
+  },
 ];
