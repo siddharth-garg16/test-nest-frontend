@@ -1,50 +1,4 @@
-@use '@angular/material' as mat;
-@import url('./global.scss');
-
-$light-theme: mat.define-theme(
-  (
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-      theme-type: light,
-    ),
-  )
-);
-
-$dark-theme: mat.define-theme(
-  (
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-      theme-type: dark,
-    ),
-  )
-);
-
-// used to target material's specific component to have denser UI (form field, radio, checkbox)
-$compact-material-mixin-theme: mat.define-theme(
-  (
-    density: (
-      scale: -4,
-    ),
-  )
-);
-
-// compact theme mixin
-@mixin apply-compact-theme($compact-theme) {
-  @include mat.form-field-density($compact-theme);
-  @include mat.radio-density($compact-theme);
-  @include mat.checkbox-density($compact-theme);
-  @include mat.menu-density($compact-theme);
-  @include mat.select-density($compact-theme);
-}
-
-// general light/dark dynamic theme
-@mixin apply-light-dark-theme($light-dark-theme) {
-  @include mat.all-component-themes($light-dark-theme);
-  background-color: mat.get-theme-color($light-dark-theme, surface);
-  color: mat.get-theme-color($light-dark-theme, on-surface);
-}
+@import 'tailwindcss';
 
 html,
 body {
@@ -53,23 +7,4 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-// default preference is light theme
-:root {
-  --auth-background-gradient-start: #466fab;
-  --auth-background-gradient-end: #7890c8;
-
-  @include apply-light-dark-theme($light-theme);
-  @include apply-compact-theme($compact-material-mixin-theme);
-}
-
-.light-theme {
-  @include apply-light-dark-theme($light-theme);
-  @include apply-compact-theme($compact-material-mixin-theme);
-}
-
-.dark-theme {
-  @include apply-light-dark-theme($dark-theme);
-  @include apply-compact-theme($compact-material-mixin-theme);
 }

@@ -1,45 +1,196 @@
-<div class="login-form-wrapper h-100 w-100 d-flex justify-center align-center">
-  <form class="login-form">
-    <mat-card appearance="raised">
-      <mat-card-content>
-        <div class="text-center">
-          <h2>Test Nest</h2>
-        </div>
+<div
+  class="min-h-screen w-full flex flex-col items-center justify-start pt-16 pb-10"
+  style="background: linear-gradient(135deg, #f0f5f0 0%, #e8f0e8 50%, #f5faf5 100%)"
+>
+  <!-- Background blobs -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div
+      class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-40 blur-3xl"
+      style="background: radial-gradient(circle, #c8ddc4 0%, #a8c9a0 100%)"
+    ></div>
+    <div
+      class="absolute top-1/3 -right-20 w-80 h-80 rounded-full opacity-30 blur-3xl"
+      style="background: radial-gradient(circle, #b8d4b0 0%, #8fb888 100%)"
+    ></div>
+    <div
+      class="absolute bottom-10 left-1/3 w-64 h-64 rounded-full opacity-25 blur-3xl"
+      style="background: radial-gradient(circle, #d4e8d0 0%, #adc9a6 100%)"
+    ></div>
+  </div>
 
-        <div>
-          <mat-form-field appearance="outline" class="w-100">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" />
-            <mat-icon matSuffix>mail</mat-icon>
-          </mat-form-field>
+  <!-- Header -->
+  <div class="flex flex-col items-center mb-10">
+    <!-- Wordmark -->
+    <div class="flex items-baseline gap-1">
+      <span
+        class="text-4xl font-black tracking-tight"
+        style="
+          color: #3d5c35;
+          font-family: 'Georgia', 'Times New Roman', serif;
+          letter-spacing: -0.03em;
+        "
+      >
+        Test
+      </span>
+      <span
+        class="text-4xl font-black italic"
+        style="
+          color: #4a6741;
+          font-family: 'Georgia', 'Times New Roman', serif;
+          letter-spacing: -0.02em;
+        "
+      >
+        Nest
+      </span>
+    </div>
 
-          <mat-form-field appearance="outline" class="w-100">
-            <mat-label>Password</mat-label>
-            <input matInput [type]="hidePassword() ? 'password' : 'text'" />
-            <button
-              matIconButton
-              matSuffix
-              type="button"
-              (click)="togglePasswordVisibility($event)"
+    <div class="flex items-center gap-2 mt-2">
+      <div class="h-px w-8 rounded" style="background-color: #a8c4a0"></div>
+      <p class="text-xs font-medium tracking-[0.2em] uppercase" style="color: #7a9e72">
+        Educator Portal Access
+      </p>
+      <div class="h-px w-8 rounded" style="background-color: #a8c4a0"></div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="bg-white rounded-2xl shadow-sm w-full max-w-lg px-10 py-8">
+    <form>
+      <!-- Email -->
+      <div class="mb-5">
+        <label class="block text-xs font-semibold tracking-widest text-gray-400 mb-2 uppercase">
+          Email Address
+        </label>
+        <div class="relative">
+          <span
+            class="absolute inset-y-0 left-3 flex items-center text-gray-300 pointer-events-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
-            </button>
-          </mat-form-field>
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </span>
+          <input
+            type="email"
+            placeholder="educator@school.edu"
+            class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4a6741] focus:border-transparent transition"
+          />
         </div>
+      </div>
 
-        <div class="text-center">
-          <button type="button" matButton="filled" class="w-100">Login</button>
+      <!-- Password -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <label class="block text-xs font-semibold tracking-widest text-gray-400 uppercase">
+            Password
+          </label>
+          <a href="#" class="text-xs font-semibold" style="color: #4a6741">Forgot Password?</a>
         </div>
-
-        <mat-divider class="mt-15 mb-10"></mat-divider>
-
-        <div class="text-center">
-          <small>
-            Don't have an account?
-            <a class="t-link ml-5 t-semi-bold t-none" [routerLink]="['/signup']">Signup</a>
-          </small>
+        <div class="relative">
+          <span
+            class="absolute inset-y-0 left-3 flex items-center text-gray-300 pointer-events-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </span>
+          <input
+            [type]="hidePassword() ? 'password' : 'text'"
+            placeholder="••••••••"
+            class="w-full pl-10 pr-10 py-3 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4a6741] focus:border-transparent transition"
+          />
+          <button
+            type="button"
+            (click)="togglePasswordVisibility($event)"
+            class="absolute inset-y-0 right-3 flex items-center text-gray-300 hover:text-gray-500 transition"
+          >
+            @if (hidePassword()) {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            } @else {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+                />
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            }
+          </button>
         </div>
-      </mat-card-content>
-    </mat-card>
-  </form>
+      </div>
+
+      <!-- Login Button -->
+      <button
+        type="submit"
+        class="w-full py-4 rounded-2xl text-white text-sm font-semibold tracking-wide flex items-center justify-center gap-2 hover:opacity-90 transition-opacity duration-200"
+        style="background-color: #4a6741"
+      >
+        Login
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+    </form>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-100 my-6"></div>
+
+    <!-- Sign Up CTA -->
+    <p class="text-center text-sm text-gray-400 mb-4">New to Test Nest?</p>
+    <p class="text-center text-sm text-gray-500">
+      Already have an account?
+      <a [routerLink]="['/signup']" class="font-semibold" style="color: #4a6741">Sign Up</a>
+    </p>
+  </div>
+
+  <p class="text-xs text-gray-400 mt-6">© 2026 Test Nest Framework. All rights reserved.</p>
 </div>
