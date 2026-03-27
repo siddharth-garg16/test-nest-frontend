@@ -8,11 +8,11 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.routes').then((m) => m.authRoutes),
+    loadChildren: () => import('./auth/auth.routes').then((r) => r.authRoutes),
   },
   {
     path: 'app',
-    loadChildren: () => import('./layout/layout.routes').then((m) => m.layoutRoutes),
+    loadChildren: () => import('./layout/layout.routes').then((r) => r.layoutRoutes),
   },
   {
     path: '**',
