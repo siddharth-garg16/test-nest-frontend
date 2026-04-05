@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { AuthStorage as AuthStorageInterface } from '../interfaces/auth-data.interface';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthStorage {
+export class AuthStorageService {
+  private readonly localStorageService = inject(LocalStorageService);
+
   // provides encapsulation on direct hard coded localstorage access
   private readonly AUTH_STORAGE_KEY = 'app_auth';
 
@@ -25,20 +28,20 @@ export class AuthStorage {
   }
 
   // set auth data in the local storage in encoded format
-  setAuthData(authData: AuthStorageInterface): void {
-    localStorage.setItem(this.AUTH_STORAGE_KEY, this.encodeAuthData(authData));
+  public setAuthData(authData: AuthStorageInterface): void {
+    this.localStorageService.setItem(this.AUTH_STORAGE_KEY, this.encodeAuthData(authData));
   }
 
   // get auth data from the local storage in decoded format
-  getAuthData(): AuthStorageInterface | null {
-    const encodedString = localStorage.getItem(this.AUTH_STORAGE_KEY);
+  public getAuthData(): AuthStorageInterface | null {
+    const encodedString = this.localStorageService.getItem(this.AUTH_STORAGE_KEY);
     if (!encodedString) return null;
 
     return this.decodeAuthData(encodedString);
   }
 
   // clears auth data from local storage
-  clearAuthData(): void {
-    localStorage.removeItem(this.AUTH_STORAGE_KEY);
+  public clearAuthData(): void {
+    this.localStorageService.removeItem(this.AUTH_STORAGE_KEY);
   }
 }

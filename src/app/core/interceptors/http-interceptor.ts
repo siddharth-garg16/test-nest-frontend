@@ -1,8 +1,8 @@
 import { HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
-import { AuthStorage } from '../services/auth-storage';
+import { AuthStorageService } from '../services/auth-storage.service';
 import { inject } from '@angular/core';
 
 export const httpInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: HttpHandlerFn) => {
-  const authStorage = inject(AuthStorage);
+  const authStorage = inject(AuthStorageService);
   return next(req);
 };
